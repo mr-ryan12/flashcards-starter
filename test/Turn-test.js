@@ -21,11 +21,11 @@ describe('Turn', function() {
     expect(turn.guess).to.equal('object');
   });
 
-  it.skip('should store an instance of Card', function() {
+  it('should store a card', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
 
-    expect(turn.currentCard).to.be.an.instanceOf(card);
+    expect(turn.currentCard).to.equal(card);
   });
 
   it.skip('should return a guess', function() {
