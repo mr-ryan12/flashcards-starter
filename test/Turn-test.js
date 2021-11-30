@@ -52,7 +52,7 @@ describe('Turn', function() {
     expect(evaluateGuess).to.equal(true);
   });
 
-  it.skip('should give feedback', function() {
+  it('should give feedback', function() {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('object', card);
     const feedback = turn.giveFeedback();
