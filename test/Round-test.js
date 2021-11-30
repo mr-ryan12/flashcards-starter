@@ -35,17 +35,16 @@ describe('Round', function() {
     const deck = new Deck([card1, card2, card3]);
     const round = new Round(deck);
     const currentCard = round.returnCurrentCard();
-    console.log(round.currentCard);
 
     expect(currentCard).to.equal(round.deck.cards[0]);
   });
 
-  it.skip('should start of with 0 turns', function() {
+  it('should start of with 0 turns', function() {
     const round = new Round();
     expect(round.turns).to.equal(0);
   });
 
-  it.skip('should start off without any incorrect guesses', function() {
+  it('should start off without any incorrect guesses', function() {
     const round = new Round();
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
