@@ -58,5 +58,5 @@ describe('Turn', function() {
     const feedback = turn.giveFeedback();
 
     expect(feedback).to.equal('correct!');
-  })
+  });
 });
