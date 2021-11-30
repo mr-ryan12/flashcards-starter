@@ -26,6 +26,11 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   });
 
+  it.skip('should have an initial number of turns of 0', function() {
+    const round = new Round();
+    expect(round.turns).to.equal(0);
+  });
+
   it.skip('should return the current card', function() {
     const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
@@ -37,4 +42,6 @@ describe('Round', function() {
 
     expect(currentCard).to.equal(round.deck[0]);
   });
+
+
 });
