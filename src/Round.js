@@ -4,7 +4,7 @@ class Round {
   }
 
   returnCurrentCard() {
-    return this.deck.cards[0];
+    return this.currentCard = this.deck.cards[0];
   }
 }
 

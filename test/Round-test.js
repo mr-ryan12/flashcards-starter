@@ -35,6 +35,7 @@ describe('Round', function() {
     const deck = new Deck([card1, card2, card3]);
     const round = new Round(deck);
     const currentCard = round.returnCurrentCard();
+    console.log(round.currentCard);
 
     expect(currentCard).to.equal(round.deck.cards[0]);
   });
