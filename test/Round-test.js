@@ -114,7 +114,7 @@ describe('Round', function() {
     expect(incorrectGuess).to.equal('incorrect!');
   });
 
-  it.skip('should calculate the percentage of correct guesses', function() {
+  it('should calculate the percentage of correct guesses', function() {
     const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
     const card3 = new Card(3, 'What type of protoype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
@@ -127,6 +127,21 @@ describe('Round', function() {
     const percentageCorrect = round.calculatePercentCorrect();
 
     expect(percentageCorrect).to.equal(100);
+  });
+
+  it('should update the percentage of correct guesses', function() {
+    const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    const card3 = new Card(3, 'What type of protoype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
+
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+
+    round.takeTurn('object');
+    expect(round.calculatePercentCorrect()).to.equal(100);
+
+    round.takeTurn('function');
+    expect(round.calculatePercentCorrect()).to.equal(50);
   });
 
   it.skip('should end the round', function() {
