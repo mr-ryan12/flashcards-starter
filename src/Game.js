@@ -17,7 +17,7 @@ class Game {
 
   start() {
     this.cards = prototypeQuestions.slice(0, 10);
-    this.deck = this.currentRound.deck.cards; 
+    this.currentRound.deck.cards = this.cards; 
   }
 }
 

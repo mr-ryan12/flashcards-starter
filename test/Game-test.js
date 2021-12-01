@@ -69,6 +69,6 @@ describe('Game', function() {
 
     game.start();
 
-    expect(game.deck).to.deep.equal(deck.cards);
+    expect(game.currentRound.deck.cards).to.deep.equal(deck.cards);
   });
 });
