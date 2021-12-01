@@ -49,7 +49,7 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it('should update the turns count', function() {
+  it('should take turns', function() {
     const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
     const card3 = new Card(3, 'What type of protoype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
@@ -61,6 +61,21 @@ describe('Round', function() {
     round.takeTurn('function');
 
     expect(round.turns).to.equal(2);
+  });
+
+  it('should return a new card', function() {
+    const card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card2 = new Card(2, 'What is a comma-separated list of related values?', ['array', 'object', 'function'], 'array');
+    const card3 = new Card(3, 'What type of protoype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
+
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+
+    round.takeTurn('object');
+    expect(round.currentCard).to.equal(card1);
+
+    round.takeTurn('function')
+    expect(round.currentCard).to.equal(card2);
   });
 
   it('should store incorrect guesses', function() {
