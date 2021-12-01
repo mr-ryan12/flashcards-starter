@@ -17,8 +17,12 @@ class Round {
     this.deck.cards.shift();
 
     const newTurn = new Turn(guess, this.currentCard);
+
     if (!newTurn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.currentCard.id)
+      this.incorrectGuesses.push(this.currentCard.id);
+      return newTurn.giveFeedback();
+    } else {
+      return newTurn.giveFeedback();
     }
   }
 }
