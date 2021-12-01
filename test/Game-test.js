@@ -45,8 +45,6 @@ describe('Game', function() {
     const deck = new Deck([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
     const round = new Round(deck);
     const game = new Game(round);
-    
-    game.start();
 
     expect(game.currentRound.deck.cards).to.deep.equal([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
   });
@@ -67,7 +65,7 @@ describe('Game', function() {
     const round = new Round(deck);
     const game = new Game(round);
 
-    game.start();
+    // game.start();
 
     expect(game.currentRound.deck.cards).to.deep.equal(deck.cards);
   });
@@ -87,8 +85,6 @@ describe('Game', function() {
     const deck = new Deck([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
     const round = new Round(deck);
     const game = new Game(round);
-
-    game.start();
 
     expect(round).to.be.an.instanceOf(Round);
   });
