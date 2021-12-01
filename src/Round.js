@@ -20,9 +20,9 @@ class Round {
 
     if (!newTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
-      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
+      return `incorrect!`;
     } else {
-      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
+      return `correct!`;
     }
   }
 
@@ -34,6 +34,7 @@ class Round {
     const percentCorrect = this.calculatePercentCorrect();
     const message = `**Round over!** You answered ${percentCorrect}% of the questions correctly!`;
     
+    console.log(message);
     return message;
   }
 }
