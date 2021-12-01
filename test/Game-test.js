@@ -48,7 +48,7 @@ describe('Game', function() {
     
     game.start();
 
-    expect(game.cards).to.deep.equal([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
+    expect(game.currentRound.deck.cards).to.deep.equal([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
   });
 
   it('should put the cards in a deck', function() {
@@ -70,5 +70,26 @@ describe('Game', function() {
     game.start();
 
     expect(game.currentRound.deck.cards).to.deep.equal(deck.cards);
+  });
+
+  it('should create a new Round instance', function() {
+    const card1 = prototypeQuestions[0];
+    const card2 = prototypeQuestions[1];
+    const card3 = prototypeQuestions[2];
+    const card4 = prototypeQuestions[3];
+    const card5 = prototypeQuestions[4];
+    const card6 = prototypeQuestions[5];
+    const card7 = prototypeQuestions[6];
+    const card8 = prototypeQuestions[7];
+    const card9 = prototypeQuestions[8];
+    const card10 = prototypeQuestions[9];
+
+    const deck = new Deck([card1, card2, card3, card4, card5, card6, card7, card8, card9, card10]);
+    const round = new Round(deck);
+    const game = new Game(round);
+
+    game.start();
+
+    expect(round).to.be.an.instanceOf(Round);
   });
 });
