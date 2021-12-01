@@ -20,9 +20,9 @@ class Round {
 
     if (!newTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
-      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
+      return `incorrect!`;
     } else {
-      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
+      return `correct!`;
     }
   }
 
