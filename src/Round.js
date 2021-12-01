@@ -20,14 +20,21 @@ class Round {
 
     if (!newTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
-      return newTurn.giveFeedback();
+      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
     } else {
-      return newTurn.giveFeedback();
+      return `Your answer of ${guess} is ${newTurn.giveFeedback()}`;
     }
   }
 
   calculatePercentCorrect() {
     return 100 - ((this.incorrectGuesses.length / this.turns) * 100);
+  }
+
+  endRound() {
+    const percentCorrect = this.calculatePercentCorrect();
+    const message = `**Round over!** You answered ${percentCorrect}% of the questions correctly!`;
+    
+    return message;
   }
 }
 
