@@ -25,7 +25,7 @@ class Game {
     const deck = new Deck(cardValues);
     const round = new Round(deck);
 
-    this.currentRound = newRound;
+    this.currentRound = round;
     this.printMessage(deck.countCards());
     this.printQuestion(round);
   }
