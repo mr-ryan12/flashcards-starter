@@ -22,17 +22,17 @@ describe('Card', function() {
   });
 
   it('should store a question', function() {
-    const card1 = prototypeQuestions[0];
-    expect(card1.question).to.equal('What allows you to define a set of related information using key-value pairs?');
+    const card = prototypeQuestions[0];
+    expect(card.question).to.equal('What allows you to define a set of related information using key-value pairs?');
   });  
 
   it('should store a list of possible answers', function() {
-    const card1 = prototypeQuestions[0];
-    expect(card1.answers).to.deep.equal(['object', 'array', 'function']);
+    const card = prototypeQuestions[0];
+    expect(card.answers).to.deep.equal(['object', 'array', 'function']);
   });  
 
   it('should store the correct answer', function() {
-    const card1 = prototypeQuestions[0];
-    expect(card1.correctAnswer).to.equal('object');
+    const card = prototypeQuestions[0];
+    expect(card.correctAnswer).to.equal('object');
   });
 });

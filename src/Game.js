@@ -20,9 +20,8 @@ class Game {
   }
 
   start() {
-    const cards = prototypeQuestions.slice(0, 10);
-    const cardValues = cards.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
-    const deck = new Deck(cardValues);
+    const cards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
+    const deck = new Deck(cards);
     const round = new Round(deck);
 
     this.currentRound = round;

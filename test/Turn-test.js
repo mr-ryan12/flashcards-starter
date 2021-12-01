@@ -2,12 +2,12 @@ const chai = require('chai');
 const expect = chai.expect;
 const Card = require('../src/Card');
 const Turn = require('../src/Turn');
-
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
 
 describe('Turn', function() {
 
   it('should be a function', function() {
-    const turn = new Turn();
     expect(Turn).to.be.a('function');
   });
 
@@ -22,14 +22,14 @@ describe('Turn', function() {
   });
 
   it('should store a card', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('object', card);
 
     expect(turn.currentCard).to.equal(card);
   });
 
   it('should return a guess', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('object', card);
     const guess = turn.returnGuess();
 
@@ -37,7 +37,7 @@ describe('Turn', function() {
   });
 
   it('should return a card', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('object', card);
     const currentCard = turn.returnCard();
 
@@ -45,7 +45,7 @@ describe('Turn', function() {
   });
 
   it('should evaluate a correct guess', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('object', card);
     const evaluateGuess = turn.evaluateGuess();
 
@@ -53,7 +53,7 @@ describe('Turn', function() {
   });
 
   it('should evaluate an incorrect guess', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('array', card);
     const evaluateGuess = turn.evaluateGuess();
 
@@ -61,7 +61,7 @@ describe('Turn', function() {
   });
 
   it('should give feedback for a correct answer', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('object', card);
     const feedback = turn.giveFeedback();
 
@@ -69,7 +69,7 @@ describe('Turn', function() {
   });
 
   it('should give feedback for an incorrect answer', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
+    const card = prototypeQuestions[0];
     const turn = new Turn('array', card);
     const feedback = turn.giveFeedback();
 
