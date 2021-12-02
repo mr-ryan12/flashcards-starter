@@ -20,8 +20,8 @@ describe('Deck', function() {
     card3 = prototypeQuestions[2];
 
     newCard1 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
-    newCard2 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
-    newCard3 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
+    newCard2 = new Card(card2.id, card2.question, card2.answers, card2.correctAnswer);
+    newCard3 = new Card(card3.id, card3.question, card3.answers, card3.correctAnswer);
     
     deck = new Deck([newCard1, newCard2, newCard3]);
   });

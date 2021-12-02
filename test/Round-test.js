@@ -14,6 +14,7 @@ describe('Round', function() {
   let newCard1;
   let newCard2;
   let newCard3;
+  let deck;
   let round;
 
   beforeEach(function() {

@@ -14,6 +14,7 @@ describe('Game', function() {
   let newCard1;
   let newCard2;
   let newCard3;
+  let deck;
   let round;
   let game;
 
@@ -39,7 +40,7 @@ describe('Game', function() {
     expect(game).to.be.an.instanceOf(Game);
   });
 
-  it('should create a new round',function() {
+  it('should create a new round', function() {
     expect(game.currentRound).to.equal(round);
   });
 
