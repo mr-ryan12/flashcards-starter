@@ -10,13 +10,20 @@ describe('Deck', function() {
   let card2;
   let card3;
   let deck;
+  let newCard1;
+  let newCard2;
+  let newCard3;
 
   beforeEach(function() {
     card1 = prototypeQuestions[0];
     card2 = prototypeQuestions[1];
     card3 = prototypeQuestions[2];
+
+    newCard1 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
+    newCard2 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
+    newCard3 = new Card(card1.id, card1.question, card1.answers, card1.correctAnswer);
     
-    deck = new Deck([card1, card2, card3]);
+    deck = new Deck([newCard1, newCard2, newCard3]);
   });
 
   it('should be a function', function() {
@@ -28,7 +35,7 @@ describe('Deck', function() {
   });
 
   it('should be able to store cards', function() {
-    expect(deck.cards).to.deep.equal([card1, card2, card3]);
+    expect(deck.cards).to.deep.equal([newCard1, newCard2, newCard3]);
   });
 
   it('should return the number of cards in the deck', function() {
