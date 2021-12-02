@@ -9,7 +9,7 @@
 - [Challenges and Wins](#challenges-and-wins)
 - [Contributors](#contributors)
 
-## Overview
+## Abstract
 
 This application allows a user to play a multiple choice trivia game in the terminal about iterator methods. 
 
