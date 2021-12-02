@@ -27,9 +27,11 @@ describe('Turn', function() {
     expect(turn.guess).to.equal('object');
   });
 
-  it('should store a card', function() {
+  it('should store an instance of Card', function() {
     const card = prototypeQuestions[0];
-    expect(turn.currentCard).to.equal(card);
+    const currentCard = new Card(card.id, card.question, card.answers, card.correctAnswer);
+    
+    expect(turn.currentCard).to.deep.equal(currentCard);
   });
 
   it('should return a guess', function() {
