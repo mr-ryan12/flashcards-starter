@@ -4,7 +4,6 @@ const data = require('../src/data');
 const prototypeQuestions = data.prototypeData;
 const Card = require('../src/Card');
 
-
 describe('Card', function() {
 
   it('should be a function', function() {
