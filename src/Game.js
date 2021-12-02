@@ -10,8 +10,8 @@ class Game {
     this.currentRound = round;
   }
 
-  printMessage(deck, round) {
-    console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
+  printMessage(deckCount) {
+    console.log(`Welcome to FlashCards! You are playing with ${deckCount} cards.
 -----------------------------------------------------------------------`)
   }
 
@@ -20,13 +20,12 @@ class Game {
   }
 
   start() {
-    const cards = prototypeQuestions.slice(0, 10);
-    const cardValues = cards.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
-    const deck = new Deck(cardValues);
+    const cards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
+    const deck = new Deck(cards);
     const round = new Round(deck);
 
     this.currentRound = round;
-    this.printMessage(deck, round);
+    this.printMessage(deck.countCards());
     this.printQuestion(round);
   }
 }
