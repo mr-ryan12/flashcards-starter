@@ -8,10 +8,12 @@ const prototypeQuestions = data.prototypeData;
 describe('Turn', function() {
   let card;
   let turn;
+  let newCard;
 
   beforeEach(function() {
     card = prototypeQuestions[0];
-    turn = new Turn('object', card);
+    newCard = new Card(card.id, card.question, card.answers, card.correctAnswer);
+    turn = new Turn('object', newCard);
   });
 
   it('should be a function', function() {
@@ -27,11 +29,8 @@ describe('Turn', function() {
     expect(turn.guess).to.equal('object');
   });
 
-  it('should store an instance of Card', function() {
-    const card = prototypeQuestions[0];
-    const currentCard = new Card(card.id, card.question, card.answers, card.correctAnswer);
-    
-    expect(turn.currentCard).to.deep.equal(currentCard);
+  it('should store an instance of Card', function() {    
+    expect(turn.currentCard).to.deep.equal(newCard);
   });
 
   it('should return a guess', function() {
@@ -41,7 +40,7 @@ describe('Turn', function() {
 
   it('should return a card', function() {
     const currentCard = turn.returnCard();
-    expect(currentCard).to.equal(card);
+    expect(currentCard).to.equal(newCard);
   });
 
   it('should evaluate a correct guess', function() {
@@ -50,7 +49,7 @@ describe('Turn', function() {
   });
 
   it('should evaluate an incorrect guess', function() {
-    const turn = new Turn('array', card);
+    const turn = new Turn('array', newCard);
     const evaluateGuess = turn.evaluateGuess();
 
     expect(evaluateGuess).to.equal(false);
@@ -62,7 +61,7 @@ describe('Turn', function() {
   });
 
   it('should give feedback for an incorrect answer', function() {
-    const turn = new Turn('array', card);
+    const turn = new Turn('array', newCard);
     const feedback = turn.giveFeedback();
 
     expect(feedback).to.equal('incorrect!');
