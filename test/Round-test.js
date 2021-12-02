@@ -47,7 +47,7 @@ describe('Round', function() {
     expect(currentCard).to.equal(round.deck.cards[0]);
   });
 
-  it('should start of with 0 turns', function() {
+  it('should start off with 0 turns', function() {
     expect(round.turns).to.equal(0);
   });
 
