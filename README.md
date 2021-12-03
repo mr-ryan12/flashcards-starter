@@ -2,7 +2,7 @@
   
 ## Table of Contents
 - [Abstract](#abstract)
-- [Screentshots](#screenshots)
+- [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Links](#links)
